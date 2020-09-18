@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "remenber_pwd_unselected_img-@1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "remenber_pwd_unselected_img-@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "remenber_pwd_unselected_img-@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
