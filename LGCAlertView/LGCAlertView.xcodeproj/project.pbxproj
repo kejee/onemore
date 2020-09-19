@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18FCA92C2510B68300432C07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA92B2510B68300432C07 /* AppDelegate.m */; };
-		18FCA92F2510B68300432C07 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA92E2510B68300432C07 /* SceneDelegate.m */; };
 		18FCA9322510B68300432C07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA9312510B68300432C07 /* ViewController.m */; };
 		18FCA9352510B68300432C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA9332510B68300432C07 /* Main.storyboard */; };
 		18FCA9372510B6A600432C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA9362510B6A600432C07 /* Assets.xcassets */; };
@@ -42,8 +41,6 @@
 		18FCA9272510B68300432C07 /* LGCAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGCAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FCA92A2510B68300432C07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18FCA92B2510B68300432C07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18FCA92D2510B68300432C07 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		18FCA92E2510B68300432C07 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		18FCA9302510B68300432C07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		18FCA9312510B68300432C07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18FCA9342510B68300432C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,8 +111,6 @@
 				18FCA95F2510BB4300432C07 /* LGCDialogView */,
 				18FCA92A2510B68300432C07 /* AppDelegate.h */,
 				18FCA92B2510B68300432C07 /* AppDelegate.m */,
-				18FCA92D2510B68300432C07 /* SceneDelegate.h */,
-				18FCA92E2510B68300432C07 /* SceneDelegate.m */,
 				18FCA9302510B68300432C07 /* ViewController.h */,
 				18FCA9312510B68300432C07 /* ViewController.m */,
 				18FCA9332510B68300432C07 /* Main.storyboard */,
@@ -292,7 +287,6 @@
 				18FCA92C2510B68300432C07 /* AppDelegate.m in Sources */,
 				18FCA93D2510B6A600432C07 /* main.m in Sources */,
 				18FCA9632510BB4300432C07 /* LGCAlertView.m in Sources */,
-				18FCA92F2510B68300432C07 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +460,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = A3GDX7GVNR;
 				INFOPLIST_FILE = LGCAlertView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,6 +481,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = A3GDX7GVNR;
 				INFOPLIST_FILE = LGCAlertView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

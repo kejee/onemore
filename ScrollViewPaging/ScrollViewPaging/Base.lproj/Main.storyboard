@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nft-a5-dKa">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -81,10 +82,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0sN-Zh-Yeu">
-                                <rect key="frame" x="30" y="44" width="315" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UJT-aq-9ht">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="301.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s8M-w6-JBf" customClass="KKCollectionViewFlowLayout_r">
                                             <size key="itemSize" width="128" height="128"/>
@@ -108,7 +109,7 @@
                                         </connections>
                                     </collectionView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NmX-wx-rM0">
-                                        <rect key="frame" x="0.0" y="321.5" width="315" height="301.5"/>
+                                        <rect key="frame" x="0.0" y="321.5" width="375" height="301.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mWK-7h-4AS">
                                             <size key="itemSize" width="128" height="128"/>
@@ -138,9 +139,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0sN-Zh-Yeu" firstAttribute="top" secondItem="eIc-IC-xqb" secondAttribute="top" id="Edh-If-SAq"/>
-                            <constraint firstItem="0sN-Zh-Yeu" firstAttribute="leading" secondItem="eIc-IC-xqb" secondAttribute="leading" constant="30" id="JI0-AO-epo"/>
+                            <constraint firstItem="0sN-Zh-Yeu" firstAttribute="leading" secondItem="eIc-IC-xqb" secondAttribute="leading" id="JI0-AO-epo"/>
                             <constraint firstItem="eIc-IC-xqb" firstAttribute="bottom" secondItem="0sN-Zh-Yeu" secondAttribute="bottom" id="a4M-6J-pHf"/>
-                            <constraint firstItem="eIc-IC-xqb" firstAttribute="trailing" secondItem="0sN-Zh-Yeu" secondAttribute="trailing" constant="30" id="fTL-Vb-ebr"/>
+                            <constraint firstItem="eIc-IC-xqb" firstAttribute="trailing" secondItem="0sN-Zh-Yeu" secondAttribute="trailing" id="fTL-Vb-ebr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HRO-wl-3R4"/>

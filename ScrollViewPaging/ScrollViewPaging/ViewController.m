@@ -8,11 +8,17 @@
 #import "ViewController.h"
 #import "KKCustomFlowLayout.h"
 #import "BSLooper3DFlowLayout.h"
-@interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+#import "KKCollectionViewFlowLayout_r.h"
+@interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, KKCollectionViewFlowLayout_rPageDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView1;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView2;
+
+@property (nonatomic, strong) KKCollectionViewFlowLayout_r *flowLayout1;
+
 //@property (nonatomic, strong) KKCustomFlowLayout *flowLayout;
 @property (nonatomic, strong) BSLooper3DFlowLayout *flowLayout2;
+
+
 @end
 
 @implementation ViewController
@@ -22,6 +28,15 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.flowLayout1 = [[KKCollectionViewFlowLayout_r alloc] init];
+    self.flowLayout1.scale = 0.6;
+    self.flowLayout1.itemSize = CGSizeMake(self.collectionView1.bounds.size.width - 90, self.collectionView1.bounds.size.height * 0.7);
+    self.flowLayout1.pageDelegate = self;
+    
+    self.collectionView1.collectionViewLayout = self.flowLayout1;
+    self.collectionView1.backgroundColor = [UIColor blackColor];
     
 }
 
@@ -39,6 +54,9 @@
 
 -(void)resetCollectionView{
     
+    
+    
+    
     self.flowLayout2 = [[BSLooper3DFlowLayout alloc]init];
 //    self.flowLayout2.itemSize = self.itemSize;
 //    self.flowLayout2.minimumLineSpacing = self.minimumLineSpacing;
@@ -49,9 +67,13 @@
     self.flowLayout2.centerOffset = -30;
     self.collectionView2.collectionViewLayout = self.flowLayout2;
 //    self.collectionView2.pagingEnabled = YES;
+    
+    self.collectionView2.backgroundColor = [UIColor systemTealColor];
 }
 
-
+- (void)fl_currentPage:(NSInteger)page {
+    NSLog(@"%ld", page);
+}
 
 
 
@@ -70,7 +92,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView == self.collectionView1 || collectionView == self.collectionView2) {
         UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"item1" forIndexPath:indexPath];
-        cell.contentView.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+        cell.contentView.backgroundColor = [UIColor whiteColor];//[UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
         return cell;
     }
     return nil;
@@ -85,11 +107,16 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     // 获取当前显示的cell的下标
-    NSIndexPath *firstIndexPath = [[collectionView indexPathsForVisibleItems] firstObject];
+//    NSIndexPath *firstIndexPath = [[collectionView indexPathsForVisibleItems] firstObject];
     
 //    NSLog(@"current index:%ld", firstIndexPath.item);
-    NSLog(@"current index:%@", [collectionView indexPathsForVisibleItems]);
+//    NSLog(@"current index:%@", [collectionView indexPathsForVisibleItems]);
     
+    
+    NSLog(@"collectionView.contentOffset.x:%f", collectionView.contentOffset.x);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"will display index:%@", indexPath);
+}
 @end

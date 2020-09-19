@@ -10,7 +10,6 @@
 		1809D84B25148B6E00360A39 /* KKCustomFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1809D84A25148B6E00360A39 /* KKCustomFlowLayout.m */; };
 		1809D8642514B13600360A39 /* BSLooper3DFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1809D8622514B13600360A39 /* BSLooper3DFlowLayout.m */; };
 		183AB67225144D3A005A8E06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 183AB67125144D3A005A8E06 /* AppDelegate.m */; };
-		183AB67525144D3A005A8E06 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 183AB67425144D3A005A8E06 /* SceneDelegate.m */; };
 		183AB67825144D3A005A8E06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183AB67725144D3A005A8E06 /* ViewController.m */; };
 		183AB67B25144D3A005A8E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183AB67925144D3A005A8E06 /* Main.storyboard */; };
 		183AB67D25144D4B005A8E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183AB67C25144D4B005A8E06 /* Assets.xcassets */; };
@@ -47,8 +46,6 @@
 		183AB66D25144D3A005A8E06 /* ScrollViewPaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewPaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183AB67025144D3A005A8E06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		183AB67125144D3A005A8E06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		183AB67325144D3A005A8E06 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		183AB67425144D3A005A8E06 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		183AB67625144D3A005A8E06 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		183AB67725144D3A005A8E06 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		183AB67A25144D3A005A8E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,10 +93,10 @@
 		183AB66425144D3A005A8E06 = {
 			isa = PBXGroup;
 			children = (
+				183AB66E25144D3A005A8E06 /* Products */,
 				183AB66F25144D3A005A8E06 /* ScrollViewPaging */,
 				183AB68B25144D4C005A8E06 /* ScrollViewPagingTests */,
 				183AB69625144D4C005A8E06 /* ScrollViewPagingUITests */,
-				183AB66E25144D3A005A8E06 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,8 +115,6 @@
 			children = (
 				183AB67025144D3A005A8E06 /* AppDelegate.h */,
 				183AB67125144D3A005A8E06 /* AppDelegate.m */,
-				183AB67325144D3A005A8E06 /* SceneDelegate.h */,
-				183AB67425144D3A005A8E06 /* SceneDelegate.m */,
 				183AB6A8251450D7005A8E06 /* TableViewController.h */,
 				183AB6A9251450D7005A8E06 /* TableViewController.m */,
 				183AB67625144D3A005A8E06 /* ViewController.h */,
@@ -291,7 +286,6 @@
 				183AB68325144D4B005A8E06 /* main.m in Sources */,
 				183AB6AA251450D7005A8E06 /* TableViewController.m in Sources */,
 				1809D8642514B13600360A39 /* BSLooper3DFlowLayout.m in Sources */,
-				183AB67525144D3A005A8E06 /* SceneDelegate.m in Sources */,
 				183AB6B025145398005A8E06 /* KKCollectionViewFlowLayout_r.m in Sources */,
 				1809D84B25148B6E00360A39 /* KKCustomFlowLayout.m in Sources */,
 			);
@@ -469,7 +463,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = A3GDX7GVNR;
 				INFOPLIST_FILE = ScrollViewPaging/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +484,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = A3GDX7GVNR;
 				INFOPLIST_FILE = ScrollViewPaging/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
