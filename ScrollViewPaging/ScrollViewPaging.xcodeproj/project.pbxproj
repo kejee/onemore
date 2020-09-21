@@ -18,7 +18,7 @@
 		183AB68D25144D4C005A8E06 /* ScrollViewPagingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183AB68C25144D4C005A8E06 /* ScrollViewPagingTests.m */; };
 		183AB69825144D4C005A8E06 /* ScrollViewPagingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183AB69725144D4C005A8E06 /* ScrollViewPagingUITests.m */; };
 		183AB6AA251450D7005A8E06 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183AB6A9251450D7005A8E06 /* TableViewController.m */; };
-		183AB6B025145398005A8E06 /* KKCollectionViewFlowLayout_r.m in Sources */ = {isa = PBXBuildFile; fileRef = 183AB6AF25145398005A8E06 /* KKCollectionViewFlowLayout_r.m */; };
+		18FC6EFE25188A3C00DA2D61 /* KKCollectionViewFlowLayout_r.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FC6EFD25188A3B00DA2D61 /* KKCollectionViewFlowLayout_r.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,8 @@
 		183AB69925144D4C005A8E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183AB6A8251450D7005A8E06 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		183AB6A9251450D7005A8E06 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		183AB6AE25145398005A8E06 /* KKCollectionViewFlowLayout_r.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKCollectionViewFlowLayout_r.h; sourceTree = "<group>"; };
-		183AB6AF25145398005A8E06 /* KKCollectionViewFlowLayout_r.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKCollectionViewFlowLayout_r.m; sourceTree = "<group>"; };
+		18FC6EFC25188A3B00DA2D61 /* KKCollectionViewFlowLayout_r.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCollectionViewFlowLayout_r.h; sourceTree = "<group>"; };
+		18FC6EFD25188A3B00DA2D61 /* KKCollectionViewFlowLayout_r.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCollectionViewFlowLayout_r.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,18 +113,14 @@
 		183AB66F25144D3A005A8E06 /* ScrollViewPaging */ = {
 			isa = PBXGroup;
 			children = (
+				18FC6F0325188A8400DA2D61 /* OtherFlowLayout */,
+				18FC6F0225188A7900DA2D61 /* KKFlowLayout */,
 				183AB67025144D3A005A8E06 /* AppDelegate.h */,
 				183AB67125144D3A005A8E06 /* AppDelegate.m */,
 				183AB6A8251450D7005A8E06 /* TableViewController.h */,
 				183AB6A9251450D7005A8E06 /* TableViewController.m */,
 				183AB67625144D3A005A8E06 /* ViewController.h */,
 				183AB67725144D3A005A8E06 /* ViewController.m */,
-				183AB6AE25145398005A8E06 /* KKCollectionViewFlowLayout_r.h */,
-				183AB6AF25145398005A8E06 /* KKCollectionViewFlowLayout_r.m */,
-				1809D84925148B6E00360A39 /* KKCustomFlowLayout.h */,
-				1809D84A25148B6E00360A39 /* KKCustomFlowLayout.m */,
-				1809D8632514B13600360A39 /* BSLooper3DFlowLayout.h */,
-				1809D8622514B13600360A39 /* BSLooper3DFlowLayout.m */,
 				183AB67925144D3A005A8E06 /* Main.storyboard */,
 				183AB67C25144D4B005A8E06 /* Assets.xcassets */,
 				183AB67E25144D4B005A8E06 /* LaunchScreen.storyboard */,
@@ -150,6 +146,26 @@
 				183AB69925144D4C005A8E06 /* Info.plist */,
 			);
 			path = ScrollViewPagingUITests;
+			sourceTree = "<group>";
+		};
+		18FC6F0225188A7900DA2D61 /* KKFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				18FC6EFC25188A3B00DA2D61 /* KKCollectionViewFlowLayout_r.h */,
+				18FC6EFD25188A3B00DA2D61 /* KKCollectionViewFlowLayout_r.m */,
+			);
+			path = KKFlowLayout;
+			sourceTree = "<group>";
+		};
+		18FC6F0325188A8400DA2D61 /* OtherFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1809D84925148B6E00360A39 /* KKCustomFlowLayout.h */,
+				1809D84A25148B6E00360A39 /* KKCustomFlowLayout.m */,
+				1809D8632514B13600360A39 /* BSLooper3DFlowLayout.h */,
+				1809D8622514B13600360A39 /* BSLooper3DFlowLayout.m */,
+			);
+			path = OtherFlowLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +302,8 @@
 				183AB68325144D4B005A8E06 /* main.m in Sources */,
 				183AB6AA251450D7005A8E06 /* TableViewController.m in Sources */,
 				1809D8642514B13600360A39 /* BSLooper3DFlowLayout.m in Sources */,
-				183AB6B025145398005A8E06 /* KKCollectionViewFlowLayout_r.m in Sources */,
 				1809D84B25148B6E00360A39 /* KKCustomFlowLayout.m in Sources */,
+				18FC6EFE25188A3C00DA2D61 /* KKCollectionViewFlowLayout_r.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

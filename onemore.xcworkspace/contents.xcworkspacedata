@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:KKSegmentControl/KKSegmentControl.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ScrollViewPaging/ScrollViewPaging.xcodeproj">
    </FileRef>
    <FileRef
