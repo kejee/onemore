@@ -23,8 +23,11 @@
     [super viewDidLoad];
     self.collectionView.backgroundColor = [UIColor blackColor];
     
-    [self.segmentControl setItems:@[@"生活",@"影视中心",@"交通",@"电视剧",@"搞笑",@"综艺",@"影视中心",@"交通",@"电视剧",@"搞笑",@"综艺"] selectedItemIndex:0];
+    [self.segmentControl setItems:@[@"生活",@"影视中心",@"交通",@"电视剧",@"搞笑",@"综艺",@"影视中心",@"交通",@"电视剧",@"搞笑",@"综艺",@"搞笑",@"综艺"] selectedItemIndex:0];
     self.segmentControl.delegate = self;
+    self.segmentControl.selectedItemTitleColor = [UIColor systemBlueColor];
+    self.segmentControl.unSelectedItemTitleColor = [UIColor blackColor];
+    
     self.segmentControl.bridgeScrollView = self.collectionView;
 }
 
