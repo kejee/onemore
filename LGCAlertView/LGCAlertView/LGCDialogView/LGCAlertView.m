@@ -22,12 +22,24 @@ typedef void(^clickEvent)(BOOL confirmed);
 //second
 @property (weak, nonatomic) IBOutlet UIButton *noNotiButton;
 
+//third
+@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
+
+
 @property (nonatomic, copy) NSArray *blockArray;
 
 @end
 
+#define CustomNib @"LGCAlertView"
+#define SecondNib @"LGCAlertViewSecond"
+#define ThirdNib @"LGCAlertViewThird"
+
 @implementation LGCAlertView
 {
+    NSString *_nibName;
+    
+    UIImage *_image;
     NSString *_title;
     NSString *_message;
     NSString *_detail;
@@ -37,27 +49,35 @@ typedef void(^clickEvent)(BOOL confirmed);
 
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message detailText:(NSString *)detailText cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle parentVC:(UIViewController *)parentVC completion:(void (^_Nonnull)(BOOL))completion {
     
-    [self showAlertWithTitle:title message:message detailText:detailText cancelTitle:cancelTitle okTitle:okTitle nilName:@"LGCAlertView" parentVC:parentVC BlockArray:@[completion]];
+    [self showAlertWithTitle:title message:message detailText:detailText cancelTitle:cancelTitle okTitle:okTitle Image:nil NibName:CustomNib parentVC:parentVC BlockArray:@[completion]];
 }
-
+//second
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle parentVC:(UIViewController*)parentVC completion:(void(^_Nonnull)(BOOL confirmed))completion noNoti:(void(^_Nonnull)(BOOL selected))noNotiBlock {
     
-    [self showAlertWithTitle:title message:message detailText:nil cancelTitle:cancelTitle okTitle:okTitle nilName:@"LGCAlertViewSecond" parentVC:parentVC BlockArray:@[completion, noNotiBlock]];
+    [self showAlertWithTitle:title message:message detailText:nil cancelTitle:cancelTitle okTitle:okTitle Image:nil NibName:SecondNib parentVC:parentVC BlockArray:@[completion, noNotiBlock]];
+}
+//third
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message okTitle:(NSString *)okTitle image:(UIImage *)image parentVC:(UIViewController *)parentVC completion:(void (^_Nonnull)(BOOL clicked))completion {
+    
+    [self showAlertWithTitle:title message:message detailText:nil cancelTitle:nil okTitle:okTitle Image:image NibName:ThirdNib parentVC:parentVC BlockArray:@[completion]];
 }
 
 
 
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message  detailText:(NSString *)detailText cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle nilName:(NSString *)nilName parentVC:(UIViewController *)parentVC BlockArray:(NSArray *)blockArray {
-    LGCAlertView *alertView = [[LGCAlertView alloc]initWithNibName:nilName bundle:nil];
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message  detailText:(NSString *)detailText cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle Image:(UIImage *)image NibName:(NSString *)nibName parentVC:(UIViewController *)parentVC BlockArray:(NSArray *)blockArray {
+    LGCAlertView *alertView = [[LGCAlertView alloc]initWithNibName:nibName bundle:nil];
     alertView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     alertView.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [alertView alertWithTitle:title message:message detailText:detailText cancelTitle:cancelTitle okTitle:okTitle BlockArray:blockArray];
+    [alertView alertWithTitle:title message:message detailText:detailText cancelTitle:cancelTitle okTitle:okTitle Image:image BlockArray:blockArray NibName:nibName];
     [parentVC presentViewController:alertView animated:YES completion:nil];
 }
 
 
-- (void)alertWithTitle:(NSString *)title message:(NSString *)message detailText:(NSString *)detailText cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle BlockArray:(NSArray *)blockArray {//completion:(void (^)(BOOL confirmed))completion {
+- (void)alertWithTitle:(NSString *)title message:(NSString *)message detailText:(NSString *)detailText cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle Image:(UIImage *)image BlockArray:(NSArray *)blockArray NibName:(NSString *)nibName {//completion:(void (^)(BOOL confirmed))completion {
     
+    _nibName = nibName;
+    
+    _image = image;
     _title = title;
     _message = message;
     _detail = detailText;
@@ -70,15 +90,21 @@ typedef void(^clickEvent)(BOOL confirmed);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     [self createUI];
 }
 
 - (void)createUI {
-    [self setViewConstraintsWithTitle:_title message:_message detailText:_detail cancelTitle:_cancelButtonTitle okTitle:_yesButtonTitle];
+    if ([_nibName isEqualToString:CustomNib] || [_nibName isEqualToString:SecondNib]) {
+        [self setViewConstraintsWithTitle:_title message:_message detailText:_detail cancelTitle:_cancelButtonTitle okTitle:_yesButtonTitle];
+    }
+    if ([_nibName isEqualToString:ThirdNib]) {
+        [self setViewConstraintsWithTitle:_title message:_message okTitle:_yesButtonTitle Image:_image];
+    }
 }
 
 
--(void)setViewConstraintsWithTitle:(NSString *)title message:(NSString *)message detailText:(NSString *)detailText cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle {
+- (void)setViewConstraintsWithTitle:(NSString *)title message:(NSString *)message detailText:(NSString *)detailText cancelTitle:(NSString *)cancelTitle okTitle:(NSString *)okTitle {
     if (!title) {
         self.titleLabel.hidden = YES;
         self.imageView.hidden = YES;
@@ -101,6 +127,26 @@ typedef void(^clickEvent)(BOOL confirmed);
     [self.cancelButton setTitle:cancelTitle forState:UIControlStateNormal];
     [self.yesButton setTitle:okTitle forState:UIControlStateNormal];
 }
+//third
+- (void)setViewConstraintsWithTitle:(NSString *)title message:(NSString *)message okTitle:(NSString *)okTitle Image:(UIImage *)image{
+    if (!image) {
+       self.imageView.hidden = YES;
+    }
+    if (!title) {
+        self.titleLabel.hidden = YES;
+    }
+    if (!message) {
+        self.messageTextView.hidden = YES;
+    }
+    if (!okTitle) {
+        self.okButton.hidden = YES;
+    }
+    self.imageView.image = image;
+    self.titleLabel.text = title;
+    self.messageTextView.text = message;
+    [self.okButton setTitle:okTitle forState:UIControlStateNormal];
+}
+
 
 -(IBAction)dismiss:(id)sender {
     clickEvent block = _blockArray[0];
@@ -118,9 +164,15 @@ typedef void(^clickEvent)(BOOL confirmed);
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+//second
 - (IBAction)didClickNoNotiButton:(UIButton *)sender {
     sender.selected = !sender.selected;
 }
+//third
+- (IBAction)didClickOkButton:(UIButton *)sender {
+    clickEvent block = _blockArray[0];
+    !block?:block(YES);
 
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

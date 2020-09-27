@@ -54,8 +54,8 @@ typedef NS_ENUM(NSInteger, KKItemImagePosition) {
 
 @interface KKSegmentControl : UIView
 
-// 创建pagMenu
-+ (instancetype)pageMenuWithFrame:(CGRect)frame trackerStyle:(KKSegmentControlTrackerStyle)trackerStyle;
+// 创建segmentControl
++ (instancetype)segmentControlWithFrame:(CGRect)frame trackerStyle:(KKSegmentControlTrackerStyle)trackerStyle;
 - (instancetype)initWithFrame:(CGRect)frame trackerStyle:(KKSegmentControlTrackerStyle)trackerStyle;
 
 /**

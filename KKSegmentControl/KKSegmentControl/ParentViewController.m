@@ -25,9 +25,9 @@
     
     [self.segmentControl setItems:@[@"生活",@"影视中心",@"交通",@"电视剧",@"搞笑",@"综艺",@"影视中心",@"交通",@"电视剧",@"搞笑",@"综艺",@"搞笑",@"综艺"] selectedItemIndex:0];
     self.segmentControl.delegate = self;
-    self.segmentControl.selectedItemTitleColor = [UIColor systemBlueColor];
-    self.segmentControl.unSelectedItemTitleColor = [UIColor blackColor];
-    
+//    self.segmentControl.selectedItemTitleColor = [UIColor systemBlueColor];
+//    self.segmentControl.unSelectedItemTitleColor = [UIColor blackColor];
+    self.segmentControl.trackerFollowingMode = KKSegmentControlTrackerFollowingModeAlways;
     self.segmentControl.bridgeScrollView = self.collectionView;
 }
 
@@ -83,7 +83,7 @@
     self.pageControl.currentPage = _currentPage;
 }
 
-- (void)fl_currentPage:(NSInteger)page {
+- (void)fl_currentPage:(NSInteger)page pageWidth:(CGFloat)pWidth {
     NSLog(@"%ld", page);
     _currentPage = page;
     self.pageControl.currentPage = _currentPage;

@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol KKCollectionViewFlowLayout_rPageDelegate <NSObject>
-- (void)fl_currentPage:(NSInteger)page;
+- (void)fl_currentPage:(NSInteger)page pageWidth:(CGFloat)pWidth;
 @end
 
 @interface KKCollectionViewFlowLayout_r : UICollectionViewFlowLayout

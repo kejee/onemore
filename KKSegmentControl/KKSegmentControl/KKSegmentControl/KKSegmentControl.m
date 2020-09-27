@@ -27,7 +27,7 @@
 
 @implementation KKSegmentControlLine
 
-// 当外界设置隐藏和alpha值时，让pageMenu重新布局
+// 当外界设置隐藏和alpha值时，让segmentControl重新布局
 - (void)setHidden:(BOOL)hidden {
     [super setHidden:hidden];
     if (self.hideBlock) {
@@ -440,7 +440,7 @@
 
 #pragma mark - public
 
-+ (instancetype)pageMenuWithFrame:(CGRect)frame trackerStyle:(KKSegmentControlTrackerStyle)trackerStyle {
++ (instancetype)segmentControlWithFrame:(CGRect)frame trackerStyle:(KKSegmentControlTrackerStyle)trackerStyle {
     KKSegmentControl *segmentControl = [[KKSegmentControl alloc] initWithFrame:frame trackerStyle:trackerStyle];
     return segmentControl;
 }
@@ -454,6 +454,12 @@
         [self setupEndColor:_unSelectedItemTitleColor];
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setupStartColor:_selectedItemTitleColor];
+    [self setupEndColor:_unSelectedItemTitleColor];
 }
 
 - (void)setItems:(NSArray *)items selectedItemIndex:(NSInteger)selectedItemIndex {
@@ -874,7 +880,7 @@
 }
 
 - (void)moveTrackerFollowScrollView:(UIScrollView *)scrollView {
-    // 说明外界传进来了一个scrollView,如果外界传进来了，pageMenu会观察该scrollView的contentOffset自动处理跟踪器的跟踪
+    // 说明外界传进来了一个scrollView,如果外界传进来了，segmentControl会观察该scrollView的contentOffset自动处理跟踪器的跟踪
     if (self.bridgeScrollView == scrollView) { return; }
     [self prepareMoveTrackerFollowScrollView:scrollView];
 }

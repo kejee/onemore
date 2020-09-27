@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180C3B9D251C7C9C008B0194 /* LGCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180C3B9A251C7C98008B0194 /* LGCAlertView.m */; };
+		180C3B9E251C7C9C008B0194 /* LGCAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180C3B9B251C7C9B008B0194 /* LGCAlertView.xib */; };
+		180C3B9F251C7C9C008B0194 /* LGCAlertViewSecond.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180C3B9C251C7C9C008B0194 /* LGCAlertViewSecond.xib */; };
+		18C232FD2520721A005975D6 /* LGCAlertViewThird.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C232FC2520721A005975D6 /* LGCAlertViewThird.xib */; };
 		18FCA92C2510B68300432C07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA92B2510B68300432C07 /* AppDelegate.m */; };
 		18FCA9322510B68300432C07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA9312510B68300432C07 /* ViewController.m */; };
 		18FCA9352510B68300432C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA9332510B68300432C07 /* Main.storyboard */; };
@@ -15,9 +19,6 @@
 		18FCA93D2510B6A600432C07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA93C2510B6A600432C07 /* main.m */; };
 		18FCA9472510B6A600432C07 /* LGCAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA9462510B6A600432C07 /* LGCAlertViewTests.m */; };
 		18FCA9522510B6A600432C07 /* LGCAlertViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA9512510B6A600432C07 /* LGCAlertViewUITests.m */; };
-		18FCA9632510BB4300432C07 /* LGCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCA9602510BB4300432C07 /* LGCAlertView.m */; };
-		18FCA9642510BB4300432C07 /* LGCAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA9612510BB4300432C07 /* LGCAlertView.xib */; };
-		18FCA96B2511ECC400432C07 /* LGCAlertViewSecond.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA96A2511ECC400432C07 /* LGCAlertViewSecond.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180C3B9A251C7C98008B0194 /* LGCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCAlertView.m; sourceTree = "<group>"; };
+		180C3B9B251C7C9B008B0194 /* LGCAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGCAlertView.xib; sourceTree = "<group>"; };
+		180C3B9C251C7C9C008B0194 /* LGCAlertViewSecond.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGCAlertViewSecond.xib; sourceTree = "<group>"; };
+		18C232FC2520721A005975D6 /* LGCAlertViewThird.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LGCAlertViewThird.xib; sourceTree = "<group>"; };
 		18FCA9272510B68300432C07 /* LGCAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGCAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FCA92A2510B68300432C07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18FCA92B2510B68300432C07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,10 +59,7 @@
 		18FCA94D2510B6A600432C07 /* LGCAlertViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LGCAlertViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FCA9512510B6A600432C07 /* LGCAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGCAlertViewUITests.m; sourceTree = "<group>"; };
 		18FCA9532510B6A600432C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18FCA9602510BB4300432C07 /* LGCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCAlertView.m; sourceTree = "<group>"; };
-		18FCA9612510BB4300432C07 /* LGCAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGCAlertView.xib; sourceTree = "<group>"; };
 		18FCA9622510BB4300432C07 /* LGCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCAlertView.h; sourceTree = "<group>"; };
-		18FCA96A2511ECC400432C07 /* LGCAlertViewSecond.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LGCAlertViewSecond.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,9 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				18FCA9622510BB4300432C07 /* LGCAlertView.h */,
-				18FCA9602510BB4300432C07 /* LGCAlertView.m */,
-				18FCA9612510BB4300432C07 /* LGCAlertView.xib */,
-				18FCA96A2511ECC400432C07 /* LGCAlertViewSecond.xib */,
+				180C3B9A251C7C98008B0194 /* LGCAlertView.m */,
+				180C3B9B251C7C9B008B0194 /* LGCAlertView.xib */,
+				180C3B9C251C7C9C008B0194 /* LGCAlertViewSecond.xib */,
+				18C232FC2520721A005975D6 /* LGCAlertViewThird.xib */,
 			);
 			path = LGCDialogView;
 			sourceTree = "<group>";
@@ -256,8 +259,9 @@
 			files = (
 				18FCA93A2510B6A600432C07 /* LaunchScreen.storyboard in Resources */,
 				18FCA9372510B6A600432C07 /* Assets.xcassets in Resources */,
-				18FCA96B2511ECC400432C07 /* LGCAlertViewSecond.xib in Resources */,
-				18FCA9642510BB4300432C07 /* LGCAlertView.xib in Resources */,
+				18C232FD2520721A005975D6 /* LGCAlertViewThird.xib in Resources */,
+				180C3B9F251C7C9C008B0194 /* LGCAlertViewSecond.xib in Resources */,
+				180C3B9E251C7C9C008B0194 /* LGCAlertView.xib in Resources */,
 				18FCA9352510B68300432C07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,8 +289,8 @@
 			files = (
 				18FCA9322510B68300432C07 /* ViewController.m in Sources */,
 				18FCA92C2510B68300432C07 /* AppDelegate.m in Sources */,
+				180C3B9D251C7C9C008B0194 /* LGCAlertView.m in Sources */,
 				18FCA93D2510B6A600432C07 /* main.m in Sources */,
-				18FCA9632510BB4300432C07 /* LGCAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

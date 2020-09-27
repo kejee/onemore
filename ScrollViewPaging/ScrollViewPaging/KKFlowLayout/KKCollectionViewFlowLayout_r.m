@@ -124,11 +124,12 @@
     
     NSInteger currentPage = roundf(offset/pageW);
     
-    if ([self.pageDelegate respondsToSelector:@selector(fl_currentPage:)]) {
-        [self.pageDelegate fl_currentPage:currentPage];
+    if ([self.pageDelegate respondsToSelector:@selector(fl_currentPage:pageWidth:)]) {
+        [self.pageDelegate fl_currentPage:currentPage pageWidth:pageW];
     }
     
     NSLog(@"currentPage: %ld (manualScrollOffset: %f, pageW: %f)", currentPage, offset, pageW);
+    NSLog(@"contentOffset: %f", self.collectionView.contentOffset.x);
     
     return [super targetContentOffsetForProposedContentOffset:proposedContentOffset withScrollingVelocity:velocity];
 }
