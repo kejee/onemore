@@ -57,7 +57,7 @@ typedef void(^clickEvent)(BOOL confirmed);
     [self showAlertWithTitle:title message:message detailText:nil cancelTitle:cancelTitle okTitle:okTitle Image:nil NibName:SecondNib parentVC:parentVC BlockArray:@[completion, noNotiBlock]];
 }
 //third
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message okTitle:(NSString *)okTitle image:(UIImage *)image parentVC:(UIViewController *)parentVC completion:(void (^_Nonnull)(BOOL clicked))completion {
++ (void)showAlertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message okTitle:(NSString *_Nonnull)okTitle image:(UIImage *)image parentVC:(UIViewController *)parentVC completion:(void (^_Nonnull)(BOOL clicked))completion {
     
     [self showAlertWithTitle:title message:message detailText:nil cancelTitle:nil okTitle:okTitle Image:image NibName:ThirdNib parentVC:parentVC BlockArray:@[completion]];
 }
