@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,7 +35,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="bZ1-8L-OjA">
                                             <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
-                                            <color key="tintColor" systemColor="systemRedColor"/>
+                                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bZ1-8L-OjA" secondAttribute="height" multiplier="1.5" id="6AB-QG-noN"/>
                                             </constraints>
@@ -78,8 +77,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                    <state key="normal" title="今天不在提醒" image="remenber_pwd_unselected_img">
-                                                        <color key="titleColor" systemColor="secondaryLabelColor"/>
+                                                    <state key="normal" title="今天不再提醒" image="remenber_pwd_unselected_img">
+                                                        <color key="titleColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <state key="selected" image="remenber_pwd_selected_img"/>
                                                     <connections>
@@ -89,7 +88,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstItem="Wd8-o4-mn3" firstAttribute="centerX" secondItem="PrF-9V-p0K" secondAttribute="centerX" id="ZR5-iL-x0h"/>
                                         <constraint firstItem="Wd8-o4-mn3" firstAttribute="leading" secondItem="PrF-9V-p0K" secondAttribute="leading" constant="15" id="eBZ-tV-kS8"/>
@@ -103,16 +102,16 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p12-Ls-78y">
                                             <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuh-qY-M7h">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuh-qY-M7h">
                                                     <rect key="frame" x="0.0" y="0.0" width="157" height="50"/>
                                                     <state key="normal" title="Cancel">
-                                                        <color key="titleColor" systemColor="systemRedColor"/>
+                                                        <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="Yn6-OO-6ca"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dw4-WJ-f8s">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dw4-WJ-f8s">
                                                     <rect key="frame" x="157" y="0.0" width="157" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <state key="normal" title="Yes"/>
@@ -123,7 +122,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="p12-Ls-78y" secondAttribute="bottom" id="1aF-Cu-Ikm"/>
                                         <constraint firstAttribute="height" constant="50" id="hMh-1Q-pNY"/>
@@ -135,7 +134,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Kvf-5H-RD5" secondAttribute="trailing" id="A1O-rY-K9A"/>
                         <constraint firstItem="Kvf-5H-RD5" firstAttribute="leading" secondItem="lrM-2S-jyt" secondAttribute="leading" id="Nxi-cY-Wpf"/>
@@ -149,13 +148,13 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fct-tA-Yog"/>
             <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="lrM-2S-jyt" firstAttribute="centerX" secondItem="UZT-k6-nrA" secondAttribute="centerX" id="1fO-Nz-wnP"/>
                 <constraint firstItem="lrM-2S-jyt" firstAttribute="leading" secondItem="fct-tA-Yog" secondAttribute="leading" constant="50" id="RTq-LG-jWs"/>
                 <constraint firstItem="lrM-2S-jyt" firstAttribute="centerY" secondItem="UZT-k6-nrA" secondAttribute="centerY" id="XCQ-rh-leG"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="fct-tA-Yog"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
@@ -163,17 +162,5 @@
         <image name="icon" width="14" height="14"/>
         <image name="remenber_pwd_selected_img" width="20" height="20"/>
         <image name="remenber_pwd_unselected_img" width="20" height="20"/>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

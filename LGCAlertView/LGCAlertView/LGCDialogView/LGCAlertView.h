@@ -12,11 +12,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LGCAlertView : UIViewController
 
-+ (void)showAlertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message detailText:(NSString *_Nullable)detailText cancelTitle:(NSString *_Nullable)cancelTitle okTitle:(NSString *_Nullable)okTitle parentVC:(UIViewController *_Nonnull)parentVC completion:(void(^ _Nonnull)(BOOL confirmed))completion;
-//second
-+ (void)showAlertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message cancelTitle:(NSString *_Nullable)cancelTitle okTitle:(NSString *_Nullable)okTitle parentVC:(UIViewController *_Nonnull)parentVC completion:(void(^_Nonnull)(BOOL confirmed))completion noNoti:(void(^_Nonnull)(BOOL selected))noNotiBlock;
+
++ (void)showCustomAlertWithTitle:(NSString *_Nullable)title
+                         message:(NSString *_Nullable)message
+                      detailText:(NSString *_Nullable)detailText
+                     cancelTitle:(NSString *_Nullable)cancelTitle
+                         okTitle:(NSString *_Nullable)okTitle
+                     noNotiTitle:(NSString *_Nullable)notiTitle
+                        TopImage:(UIImage *_Nullable)image
+                        parentVC:(UIViewController *_Nonnull)parentVC
+                      completion:(void(^_Nonnull)(BOOL confirmed))completion
+                          noNoti:(void(^_Nullable)(BOOL selected))noNotiBlock;
 //third
-+ (void)showAlertWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message okTitle:(NSString *_Nonnull)okTitle image:(UIImage *)image parentVC:(UIViewController *)parentVC completion:(void (^_Nonnull)(BOOL clicked))completion;
++ (void)showAlertWithTitle:(NSString *_Nullable)title
+                   message:(NSString *_Nullable)message
+                   okTitle:(NSString *_Nonnull)okTitle
+                  TopImage:(UIImage *_Nullable)image
+                 TextImage:(UIImage *_Nullable)textImage
+               noNotiTitle:(NSString *_Nullable)notiTitle
+                  parentVC:(UIViewController *_Nonnull)parentVC
+                completion:(void (^_Nonnull)(BOOL clicked))completion
+                    noNoti:(void(^_Nullable)(BOOL selected))noNotiBlock;
 @end
 
 NS_ASSUME_NONNULL_END

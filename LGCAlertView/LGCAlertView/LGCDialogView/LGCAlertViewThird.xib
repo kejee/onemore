@@ -12,7 +12,10 @@
             <connections>
                 <outlet property="imageView" destination="Y1A-VR-Vki" id="qYF-QN-pMe"/>
                 <outlet property="messageTextView" destination="hBD-Yd-QIO" id="dU0-ET-nBl"/>
+                <outlet property="messageTextViewHeight" destination="zEz-CB-HNI" id="TUG-6C-VgN"/>
+                <outlet property="noNotiButton" destination="ajd-0E-uhP" id="0gU-8u-6dY"/>
                 <outlet property="okButton" destination="2kt-jd-mY7" id="x05-Em-V8h"/>
+                <outlet property="textImageView" destination="6Aq-QS-miM" id="Geb-2U-sdh"/>
                 <outlet property="titleLabel" destination="fqY-Pg-Xeb" id="qfb-vN-p6n"/>
                 <outlet property="view" destination="iN0-l3-epB" id="HWh-py-xWA"/>
             </connections>
@@ -23,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qml-a9-ZyP">
-                    <rect key="frame" x="50" y="208" width="314" height="480"/>
+                    <rect key="frame" x="50" y="138" width="314" height="620"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Nh-ol-bN2">
-                            <rect key="frame" x="0.0" y="0.0" width="314" height="480"/>
+                            <rect key="frame" x="0.0" y="0.0" width="314" height="620"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="device_phone_top_icon2" translatesAutoresizingMaskIntoConstraints="NO" id="Y1A-VR-Vki">
                                     <rect key="frame" x="0.0" y="0.0" width="314" height="100"/>
@@ -35,10 +38,10 @@
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onc-aN-WJf">
-                                    <rect key="frame" x="0.0" y="100" width="314" height="300"/>
+                                    <rect key="frame" x="0.0" y="100" width="314" height="440"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-K0-Hi8">
-                                            <rect key="frame" x="15" y="0.0" width="284" height="285"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-K0-Hi8">
+                                            <rect key="frame" x="15" y="0.0" width="284" height="425"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello,world!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqY-Pg-Xeb">
                                                     <rect key="frame" x="0.0" y="0.0" width="284" height="45"/>
@@ -50,16 +53,38 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBD-Yd-QIO">
-                                                    <rect key="frame" x="0.0" y="45" width="284" height="240"/>
+                                                    <rect key="frame" x="0.0" y="55" width="284" height="240"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="240" id="SGp-sg-a41"/>
+                                                        <constraint firstAttribute="height" constant="240" id="zEz-CB-HNI"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Aq-QS-miM">
+                                                    <rect key="frame" x="0.0" y="305" width="284" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="tVz-P4-6Yd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajd-0E-uhP">
+                                                    <rect key="frame" x="0.0" y="395" width="284" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="mjV-LP-8UV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <state key="normal" title="不再提醒" image="remenber_pwd_unselected_img">
+                                                        <color key="titleColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <state key="selected" image="remenber_pwd_selected_img"/>
+                                                    <connections>
+                                                        <action selector="didClickNoNotiButton:" destination="-1" eventType="touchUpInside" id="xkR-jt-ZNL"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
@@ -72,7 +97,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dw-aH-rhM">
-                                    <rect key="frame" x="0.0" y="400" width="314" height="80"/>
+                                    <rect key="frame" x="0.0" y="540" width="314" height="80"/>
                                     <subviews>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kt-jd-mY7">
                                             <rect key="frame" x="30" y="10" width="254" height="40"/>
@@ -129,5 +154,7 @@
     </objects>
     <resources>
         <image name="device_phone_top_icon2" width="404" height="248"/>
+        <image name="remenber_pwd_selected_img" width="20" height="20"/>
+        <image name="remenber_pwd_unselected_img" width="20" height="20"/>
     </resources>
 </document>
