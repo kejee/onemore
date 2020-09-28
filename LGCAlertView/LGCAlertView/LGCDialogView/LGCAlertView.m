@@ -23,10 +23,12 @@ typedef void(^clickEvent)(BOOL confirmed);
 @property (weak, nonatomic) IBOutlet UIView *botView;
 
 //third
-@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
+//@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIImageView *textImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageTextViewHeight;
+//@property (weak, nonatomic) IBOutlet UIView *alertBackgroundView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *alertHeight;
 
 
 @property (nonatomic, copy) NSArray *blockArray;
@@ -50,6 +52,9 @@ typedef void(^clickEvent)(BOOL confirmed);
     
     NSString *_noNotiButtonTitle;
     UIImage *_textImage;
+    
+    //third
+    NSMutableArray *_heights;
 }
 
 
@@ -140,6 +145,9 @@ typedef void(^clickEvent)(BOOL confirmed);
 //        self.botView.backgroundColor = [UIColor systemGrayColor];
     }
     if ([_nibName isEqualToString:ThirdNib]) {
+        
+        _heights = [@[@100, @45, @10, @240, @10, @80, @30, @80] mutableCopy];//355+240//0 1 3 5 6 7
+        
         [self setViewConstraintsWithTitle:_title message:_message okTitle:_okButtonTitle Image:_image TextImage:_textImage noNotiTitle:_noNotiButtonTitle];
     }
 }
@@ -179,36 +187,73 @@ typedef void(^clickEvent)(BOOL confirmed);
                           TextImage:(UIImage *)textImage
                         noNotiTitle:(NSString *)notiTitle {
     
-    if (!image) self.imageView.hidden = YES;
-    if (!title) self.titleLabel.hidden = YES;
-    if (!message) self.messageTextView.hidden = YES;
-    if (!okTitle) self.okButton.hidden = YES;
-    if (!textImage) self.textImageView.hidden = YES;
-    if (!notiTitle) self.noNotiButton.hidden = YES;
+    if (!image) {
+        self.imageView.hidden = YES;
+        [_heights replaceObjectAtIndex:0 withObject:@0];
+    }
+    if (!title) {
+        self.titleLabel.hidden = YES;
+        [_heights replaceObjectAtIndex:1 withObject:@0];
+    }
+    if (!message) {
+//        self.messageTextView.hidden = YES;
+        self.messageLabel.hidden = YES;
+        [_heights replaceObjectAtIndex:3 withObject:@0];
+    }
+    if (!okTitle) {
+        self.okButton.hidden = YES;
+        [_heights replaceObjectAtIndex:5 withObject:@0];
+    }
+    if (!textImage) {
+        self.textImageView.hidden = YES;
+        [_heights replaceObjectAtIndex:6 withObject:@0];
+    }
+    if (!notiTitle) {
+        self.noNotiButton.hidden = YES;
+        [_heights replaceObjectAtIndex:7 withObject:@0];
+    }
     
     self.imageView.image = image;
     self.titleLabel.text = title;
-//    self.messageTextView.text = message;
     self.textImageView.image = textImage;
     
     [self.okButton setTitle:okTitle forState:UIControlStateNormal];
     [self.noNotiButton setTitle:notiTitle forState:UIControlStateNormal];
     
     
-    NSDictionary *attDict = [self theAttributesWithTextAlignment:NSTextAlignmentLeft];
+    NSAttributedString *attMessage = [[NSAttributedString alloc] initWithString:message attributes:[self theAttributesWithTextAlignment:NSTextAlignmentLeft]];
     
-    NSAttributedString *attMessage = [[NSAttributedString alloc] initWithString:message attributes:attDict];
-    self.messageTextView.attributedText = attMessage;
+    self.messageLabel.attributedText = attMessage;
     
-    CGFloat h = [self heightOfString:message WithAttributes:attDict withWidth:self.messageTextView.frame.size.width];
-    self.messageTextViewHeight.constant = h>240?240:h;
+    [self setupMessageTextViewHeight];
+}
+
+- (void)setupMessageTextViewHeight {
+    if (!self.messageLabel.hidden) {
+        CGFloat h = [self heightOfString:_message WithAttributes:[self theAttributesWithTextAlignment:NSTextAlignmentLeft] withWidth:[UIScreen mainScreen].bounds.size.width-100-30]+20;
+        
+        self.messageTextViewHeight.constant = h;
+        
+        [_heights replaceObjectAtIndex:3 withObject:@(h)];
+    }
+    NSInteger alertH = 0;
+    for (NSNumber *obj in _heights) {
+        NSInteger height = [obj integerValue];
+        alertH = alertH + height;
+    }
+//    NSLog(@"ThirdNib: %zi", alertH);
     
+    CGFloat alertMaxHeight = [UIScreen mainScreen].bounds.size.height * 0.8;
+
+    self.alertHeight.constant = alertH > alertMaxHeight ? alertMaxHeight : alertH;
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    CGFloat h = [self heightOfString:_message WithAttributes:[self theAttributesWithTextAlignment:NSTextAlignmentLeft] withWidth:self.messageTextView.frame.size.width];
-    self.messageTextViewHeight.constant = h>240?240:h;
+    
+    if ([_nibName isEqualToString:ThirdNib]) {
+        [self setupMessageTextViewHeight];
+    }
 }
 
 
@@ -256,8 +301,13 @@ typedef void(^clickEvent)(BOOL confirmed);
     paragraphStyle.lineSpacing = 3.0; // 设置行间距
     paragraphStyle.alignment = alignment; //设置两端对齐显示
     
-    NSDictionary *attributes = @{NSFontAttributeName:dFont, NSParagraphStyleAttributeName:paragraphStyle};
-    return attributes;
+    if (@available(iOS 13.0, *)) {
+        NSDictionary *attributes = @{NSFontAttributeName:dFont, NSForegroundColorAttributeName:[UIColor labelColor], NSParagraphStyleAttributeName:paragraphStyle};
+        return attributes;
+    } else {
+        NSDictionary *attributes = @{NSFontAttributeName:dFont, NSForegroundColorAttributeName:[UIColor blackColor], NSParagraphStyleAttributeName:paragraphStyle};
+        return attributes;
+    }
 }
 
 @end
